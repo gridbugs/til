@@ -39,3 +39,10 @@ floating point numbers where values vary in order of magnitude.
 within a file for navigating to later. `ma` creates a mark named "a" at the
 cursor position. `'a` moves the cursor to the line containing mark "a", and
 `` `a `` moves the cursor to the precise location of mark "a".
+
+The [IEEE 754 single-precision binary floating-point
+format](https://en.wikipedia.org/wiki/Single-precision_floating-point_format#IEEE_754_single-precision_binary_floating-point_format:_binary32)
+looks like `[sign (1-bit)][exponent (8-bits)][mantissa (23-bits)]`.  Thus
+encoded numbers have typically have values expressed as: `((-1) ^ sign) * (2 ^
+(exponent - 127)) * 1.[mantissa]`.  The significand part of the value
+(`1.[mantissa]`) can be thought of as `2^-0 + m[22]*2^-1 + ... + m[0]*2^-23`.
