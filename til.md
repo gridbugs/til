@@ -38,4 +38,4 @@ floating point numbers where values vary in order of magnitude.
 [Marks in Vim](https://vim.fandom.com/wiki/Using_marks) let you name locations
 within a file for navigating to later. `ma` creates a mark named "a" at the
 cursor position. `'a` moves the cursor to the line containing mark "a", and
-`\`a` moves the cursor to the precise location of mark "a".
+`` `a `` moves the cursor to the precise location of mark "a".
