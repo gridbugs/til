@@ -29,7 +29,7 @@ The `source` keyword in bash is not POSIX, but the dot (`.`) (which has the
 same effect) is.
 
 Compensated Summation algorithms (e.g. [Kahan Summation
-Algorithm](https://en.wikipedia.org/wiki/Kahan_summation_algorithm) are a class
+Algorithm](https://en.wikipedia.org/wiki/Kahan_summation_algorithm)) are a class
 of algorithms for computing the sum of a collection of numbers in more
 numerically-stable way than naive addition, and can reduce the rounding errors
 typical when adding a large amount of floating point number, or a collection of
