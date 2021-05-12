@@ -5,7 +5,7 @@
 invoke metals with different configurations.  E.g. to change the bloop port,
 run `JAVA_OPTS=-Dmetals.bloop-port=8124 metals`.
 
-The default `escape-time` in TMUX makes it difficult to use programs where
+The default `escape-time` in tmux makes it difficult to use programs where
 hitting the Escape key happens frequently (such as Vim). To fix the problem,
 set `escape-time` to a low number: `set -sg escape-time 30` in your
 `~/.tmux.conf`.
@@ -46,3 +46,8 @@ looks like `[sign (1-bit)][exponent (8-bits)][mantissa (23-bits)]`.  Thus
 encoded numbers have typically have values expressed as: `((-1) ^ sign) * (2 ^
 (exponent - 127)) * 1.[mantissa]`.  The significand part of the value
 (`1.[mantissa]`) can be thought of as `2^-0 + m[22]*2^-1 + ... + m[0]*2^-23`.
+
+When attaching to a tmux session, passing `-d` (ie. `tmux a -d`) disconnects
+all other clients from that session. This is useful when switching between
+machines with different screen sizes, as the tmux session will resize such that
+it fits within the terminals of all attached clients.
