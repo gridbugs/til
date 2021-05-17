@@ -53,5 +53,8 @@ machines with different screen sizes, as the tmux session will resize such that
 it fits within the terminals of all attached clients.
 
 Cooked rice goes off unless it's refrigerated, and only keeps for a few days in
-the fridge. Cooked rice attracts fungi and mold that produce mycotoxins that
-are _super_ bad for you.
+the fridge. At room temperature, cooked rice tends to grow fungi and mold that
+produce mycotoxins.
+
+When uploading matrix data with OpenGL, matrices are presented in column-major
+order.
