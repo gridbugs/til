@@ -58,3 +58,6 @@ produce mycotoxins.
 
 When uploading matrix data with OpenGL, matrices are presented in column-major
 order.
+
+The `xargs` command takes a `-P` flag that specifies that the command should be
+run in parallel.
