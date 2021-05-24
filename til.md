@@ -61,3 +61,30 @@ order.
 
 The `xargs` command takes a `-P` flag that specifies that the command should be
 run in parallel.
+
+When constructing an OpenGL-style projection matrix, the depth of the near
+clipping plane must not be 0. It is tempting to set it to 0 to capture the
+fact that everything in front of the camera should be visible (at least up
+to the far clipping plane), but the result will be all fragments having a
+depth of 1, and thus nothing will be visible as in "normalised device
+coordinates", a depth of 1 is outside the visible area. To understand why
+all fragments take a depth of 1, consider the projection matrix:
+```
+(f / aspect)  0   0                              0
+0             f   0                              0
+0             0   ((near + far) / (near - far))  ((2 * near * far) / (near - far))
+0             0   -1                             0
+
+where f = tan(fov / 2)
+```
+If `near` is 0, the element at 3,3 is -1, and the element at 3,4 is 0.
+Multiplying a column vector (a homogeneous 3d coordinate) `[x y z w]^T` by this matrix
+gives:
+```
+x * (f / aspect
+y * f
+-z
+-z
+```
+After converting this to a non-homogeneous coordinate (by dividing by the 4th element)
+we get a coordinate with a z component of 1, regardless of depth.
